@@ -235,7 +235,7 @@ spec:
         namespace:
           title: Deployment Namespace
           type: string
-          default: tssc-app
+          default: demo-app
           ui:options:
             rows: 5
           ui:help: "This will be the prefix of the following three namespaces for deployment: <namespace>-development, <namespace>-stage, <namespace>-prod"
@@ -261,7 +261,7 @@ spec:
           description: This is GitOps manifest for ${{ parameters.name }}
           namespace: ${{ parameters.namespace }}
           rhtapNamespace: tssc
-          defaultDeployNamespace: tssc-app
+          defaultDeployNamespace: demo-app
           # example: github.com?owner=<owner>&repo=<srcRepo>, the gitops repo name will be <srcRepo>-gitops
           repoURL: https://${{ parameters.ghHost if parameters.hostType === 'GitHub' else (parameters.glHost if parameters.hostType === 'GitLab' else parameters.bbHost) }}${{ ":"+parameters.glPort if parameters.hostType === 'GitLab' and parameters.glPort != 443 }}/${{ parameters.workspace if parameters.hostType === 'Bitbucket' else (parameters.ghOwner if parameters.hostType === 'GitHub' else parameters.glOwner) }}/${{ parameters.repoName }}-gitops
           srcRepoURL: https://${{ parameters.ghHost if parameters.hostType === 'GitHub' else (parameters.glHost if parameters.hostType === 'GitLab' else parameters.bbHost) }}${{ ":"+parameters.glPort if parameters.hostType === 'GitLab' and parameters.glPort != 443 }}/${{ parameters.workspace if parameters.hostType === 'Bitbucket' else (parameters.ghOwner if parameters.hostType === 'GitHub' else parameters.glOwner) }}/${{ parameters.repoName }}
@@ -304,7 +304,7 @@ spec:
           description: This is GitOps manifest for ${{ parameters.name }}
           namespace: ${{ parameters.namespace }}
           rhtapNamespace: tssc
-          defaultDeployNamespace: tssc-app
+          defaultDeployNamespace: demo-app
           # example: github.com?owner=<owner>&repo=<srcRepo>, the gitops repo name will be <srcRepo>-gitops
           repoURL: https://${{ parameters.ghHost if parameters.hostType === 'GitHub' else (parameters.glHost if parameters.hostType === 'GitLab' else parameters.bbHost) }}${{ ":"+parameters.glPort if parameters.hostType === 'GitLab' and parameters.glPort != 443 }}/${{ parameters.workspace if parameters.hostType === 'Bitbucket' else (parameters.ghOwner if parameters.hostType === 'GitHub' else parameters.glOwner) }}/${{ parameters.repoName }}-gitops
           srcRepoURL: https://${{ parameters.ghHost if parameters.hostType === 'GitHub' else (parameters.glHost if parameters.hostType === 'GitLab' else parameters.bbHost) }}${{ ":"+parameters.glPort if parameters.hostType === 'GitLab' and parameters.glPort != 443 }}/${{ parameters.workspace if parameters.hostType === 'Bitbucket' else (parameters.ghOwner if parameters.hostType === 'GitHub' else parameters.glOwner) }}/${{ parameters.repoName }}
